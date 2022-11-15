@@ -2,3 +2,4 @@ A decision tree representation in HTML and Javascript (jQuery) based in a data s
 The system outputs a text and examples belonging to each branch of the tree, for example a classification in supervised learning is used for email spam detection and speech recognition, as we can see as the output.
 
 ## Example of a machine learning decision tree
+![alt text](https://github.com/rd-coutinho/Decision-tree-representation/blob/main/Example.png)
