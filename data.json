@@ -1,0 +1,138 @@
+{
+    "result": [
+        {
+            "code": "1",
+            "name": "Option 1",
+            "altName": "Machine Learning"
+        }
+    ],
+
+    "json2": [
+        {                      
+            "code": "1_1",
+            "name": "Supervised Learning",
+            "altName": null,
+            "nivel_1": "1"
+        },
+        {
+            "code": "1_2",
+            "name": "Unsupervised Learning",
+            "altName": null,
+            "nivel_1": "1"
+        },
+        {
+            "code": "1_3",
+            "name": "Reinforcement Learning",
+            "altName": null,
+            "nivel_1": "1"
+        }
+    ],
+
+    "json3": [
+        {           
+            "code": "1_1_1",
+            "name": "Classification",
+            "altName": null,
+            "nivel_2": "1_1"
+        },
+        {
+            "code": "1_1_2",
+            "name": "Regression",
+            "altName": null,
+            "nivel_2": "1_1"
+        },
+
+        {
+            "code": "1_2_1",
+            "name": "Clustering",
+            "altName": null,
+            "nivel_2": "1_2"
+        },
+        {
+            "code": "1_2_2",
+            "name": "Association Analysis",
+            "altName": null,
+            "nivel_2": "1_2"
+        },
+        {
+            "code": "1_2_3",
+            "name": "Dimensionality Reduction",
+            "altName": null,
+            "nivel_2": "1_2"
+        },
+
+        {
+            "code": "1_3_1",
+            "name": "Model-Free",
+            "altName": null,
+            "nivel_2": "1_3"
+        },
+        {
+            "code": "1_3_2",
+            "name": "Model-Based",
+            "altName": null,
+            "nivel_2": "1_3"
+        }
+    ],
+
+    "json_text": [
+        {
+            "code": "1_1_1_1",
+            "name": "Data with label",
+            "name1": "1. Logistic Regression<br/>2. Naive Bayes Classifier<br/>3. K-Nearest Neighbor<br/>4. Support Vector Machine",
+            "name2": "- E-mail spam detection<br/>- Speech Recognition",
+            "altName": null,
+            "nivel_3": "1_1_1"
+        },
+        {
+            "code": "1_1_1_2",
+            "name": "Data with label",
+            "name1": "1. Linear Regression<br/>2. Ridge Regression<br/>3. Ordinary Least Squares Regression<br/>4. Stepwise Regression",
+            "name2": "- Stock market prediction<br/>- Rainfall prediction",
+            "altName": null,
+            "nivel_3": "1_1_2"
+        },
+
+        {
+            "code": "1_2_1_1",
+            "name": "Data without label",
+            "name1": "1. K-means<br/>2. K-median<br/>3. Hierarchical clustering<br/>4. Expection Maximization",
+            "name2": "- Identifying fake news<br/>- Document analysis",
+            "altName": null,
+            "nivel_3": "1_2_1"
+        },
+        {
+            "code": "1_2_2_1",
+            "name": "Data without label",
+            "name1": "1. APRIORI<br/>2. Eclat<br/>3. FP-Growth",
+            "name2": "- Market basket analysis",
+            "altName": null,
+            "nivel_3": "1_2_2"
+        },
+        {
+            "code": "1_2_3_1",
+            "name": "Data without label",
+            "name1": "C.1. Feature Extraction<br/>Principal Component Analysis<br/><br/>C.2. Feature Selection<br/>1. Wrapper<br/>2. Filter<br/>3. Embedded Method",
+            "name2": "Analysis of written texts and DNA microarray data",
+            "altName": null,
+            "nivel_3": "1_2_3"
+        },
+
+        {
+            "code": "1_3_1_1",
+            "name": "State and action",
+            "name1": "1. Q-Learning<br/>2. Hybrid<br/>3. Policy Optimization",
+            "name2": "",
+            "altName": null,
+            "nivel_3": "1_3_1"
+        },
+        {
+            "code": "1_3_2_1",
+            "name": "State and action",
+            "name1": "1. Learn the Model<br/>2. Given the Model",
+            "name2": "",
+            "altName": null,
+            "nivel_3": "1_3_2"
+        }
+    ]
+}
