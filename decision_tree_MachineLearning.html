@@ -1,0 +1,372 @@
+<head>
+
+    <style>
+        body, html { 
+          margin: 0;
+          background-color: rgb(242, 242, 242)
+        } 
+
+        select {
+            font-size: 1em;
+         
+        }
+
+        #logo {
+            background-image: url("background.jpg");
+            /* background-attachment: fixed; */
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 7vw;
+            margin: 0;
+            position: relative;
+            /* z-index: 1; */
+        }
+        
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.0/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        var result = [
+            {
+                "code": "1",
+                "name": "Option 1",
+                "altName": "Machine Learning"
+            },
+        ];
+
+        var json2 = [
+        
+            {                          // Machine learning
+            "code": "1_1",
+            "name": "Supervised Learning",
+            "altName": null,
+            "nivel_1": "1"
+            },
+            {
+            "code": "1_2",
+            "name": "Unsupervised Learning",
+            "altName": null,
+            "nivel_1": "1"
+            },
+            {
+            "code": "1_3",
+            "name": "Reinforcement Learning",
+            "altName": null,
+            "nivel_1": "1"
+            },
+        ];
+
+        var json3 = [
+            // Supervised Learning
+            {             // Machine learning
+            "code": "1_1_1",
+            "name": "Classification",
+            "altName": null,
+            "nivel_2": "1_1"
+            },
+            {
+            "code": "1_1_2",
+            "name": "Regression",
+            "altName": null,
+            "nivel_2": "1_1"
+            },
+
+            // Unsupervised Learning
+            {
+            "code": "1_2_1",
+            "name": "Clustering",
+            "altName": null,
+            "nivel_2": "1_2"
+            },
+            {
+            "code": "1_2_2",
+            "name": "Association Analysis",
+            "altName": null,
+            "nivel_2": "1_2"
+            },
+            {
+            "code": "1_2_3",
+            "name": "Dimensionality Reduction",
+            "altName": null,
+            "nivel_2": "1_2"
+            },
+
+            // Reinforcement Learning
+            {
+            "code": "1_3_1",
+            "name": "Model-Free",
+            "altName": null,
+            "nivel_2": "1_3"
+            },
+            {
+            "code": "1_3_2",
+            "name": "Model-Based",
+            "altName": null,
+            "nivel_2": "1_3"
+            },
+        ];
+
+        var json_text = [                   // Outputs
+            
+            // Machine learning
+            // Supervised Learning
+            {
+            "code": "1_1_1_1",
+            "name": "Data with label",
+            "name1": "1. Logistic Regression<br/>2. Naive Bayes Classifier<br/>3. K-Nearest Neighbor<br/>4. Support Vector Machine",
+            "name2": "- E-mail spam detection<br/>- Speech Recognition",
+            "altName": null,
+            "nivel_3": "1_1_1"
+            },
+            {
+            "code": "1_1_1_2",
+            "name": "Data with label",
+            "name1": "1. Linear Regression<br/>2. Ridge Regression<br/>3. Ordinary Least Squares Regression<br/>4. Stepwise Regression",
+            "name2": "- Stock market prediction<br/>- Rainfall prediction",
+            "altName": null,
+            "nivel_3": "1_1_2"
+            },
+
+            // Unsupervised Learning
+            {
+            "code": "1_2_1_1",
+            "name": "Data without label",
+            "name1": "1. K-means<br/>2. K-median<br/>3. Hierarchical clustering<br/>4. Expection Maximization",
+            "name2": "- Identifying fake news<br/>- Document analysis",
+            "altName": null,
+            "nivel_3": "1_2_1"
+            },
+            {
+            "code": "1_2_2_1",
+            "name": "Data without label",
+            "name1": "1. APRIORI<br/>2. Eclat<br/>3. FP-Growth",
+            "name2": "- Market basket analysis",
+            "altName": null,
+            "nivel_3": "1_2_2"
+            },
+            {
+            "code": "1_2_3_1",
+            "name": "Data without label",
+            "name1": "C.1. Feature Extraction<br/>Principal Component Analysis<br/><br/>C.2. Feature Selection<br/>1. Wrapper<br/>2. Filter<br/>3. Embedded Method",
+            "name2": "Analysis of written texts and DNA microarray data",
+            "altName": null,
+            "nivel_3": "1_2_3"
+            },
+
+            // Reinforcement Learning
+            {
+            "code": "1_3_1_1",
+            "name": "State and action",
+            "name1": "1. Q-Learning<br/>2. Hybrid<br/>3. Policy Optimization",
+            "name2": "",
+            "altName": null,
+            "nivel_3": "1_3_1"
+            },
+            {
+            "code": "1_3_2_1",
+            "name": "State and action",
+            "name1": "1. Learn the Model<br/>2. Given the Model",
+            "name2": "",
+            "altName": null,
+            "nivel_3": "1_3_2"
+            },
+        ];
+  
+        $(function() {
+            let camada_1;
+            let camada_2;
+            let camada_3;
+            let camada_4;
+            let camada_5;
+            let camada_6;
+            
+            // $.getJSON('data.json', function(json) {
+            //     console.log(json);
+            // });
+                
+            // Alphabetical order
+            result.sort((a, b) => a.altName.localeCompare(b.altName))
+
+            camada_1 += `<option value="" disabled selected value>Key Words</option>`;
+            $.each(result, function(i, segment_1) {
+                camada_1 += `<option value='${segment_1.code}'> ${segment_1.altName}</option>`;
+            });
+
+            $('#segment_1').html(camada_1);
+        
+            $('#segment_1').change(function() {
+                document.getElementById("select_3").style.display = "Block"
+                document.getElementById("p_example").style.display = "Block";
+
+                // Torna invisível a divMae com os textos dos procedimentos
+                document.getElementById("divMae").style.display = "None"
+
+                var values = $(this).val()
+                var camada_2 = ""
+                /*$.getJSON('provinces.json', function(json2) {*/
+                //filter your json return..
+                var items = $(json2)
+                    .filter(function(i, n) {
+                    return n.nivel_1 === values; //get value where region is same
+                });
+
+                camada_2 += `<option value="" disabled selected value>Segment 2</option>`;
+                camada_3 = `<option value="" disabled selected value>Segment 3</option>`;
+                camada_4 = `<p name="segment_4" id="segment_4"></p>`;
+                camada_5 = `<p name="segment_5" id="segment_5"></p>`;
+                camada_6 = `<p name="segment_6" id="segment_6"></p>`;
+
+                //loop through dates
+                $.each(items, function(segment_1, segment_2) {
+                    camada_2 += `<option value='${segment_2.code}'> ${segment_2.name}</option>`;
+                });
+
+                $('#segment_2').html(camada_2);
+                $('#segment_3').html(camada_3);
+                $('#segment_4').html(camada_4);
+                $('#segment_5').html(camada_5);
+                $('#segment_6').html(camada_6);
+            });
+
+            $('#segment_2').change(function() {
+                document.getElementById("p_example").style.display = "Block";
+
+                var values2 = $(this).val()
+                var camada_3 = ""
+                /*$.getJSON('provinces.json', function(json2) {*/
+                //filter your json return..
+                var items2 = $(json3)
+                    .filter(function(i2, n2) {
+                    return n2.nivel_2 === values2; //get value where region is same
+                });
+
+                camada_3 += `<option value="" disabled selected value>Segment 3</option>`;
+                camada_4 = `<p name="segment_4" id="segment_4"></p>`;
+                camada_5 = `<p name="segment_5" id="segment_5"></p>`;
+                camada_6 = `<p name="segment_6" id="segment_6"></p>`;
+
+                //Loop through dates
+                $.each(items2, function(segment_2, segment_3) {
+                    camada_3 += `<option value='${segment_3.code}'> ${segment_3.name}</option>`;
+
+                    // If in the third segment the value is equal to "-", it can already render <p> element
+                    if (segment_3.name == "-") {
+                        var items3 = $(json_text)
+                            .filter(function(i3, n3) {
+                            return (n3.nivel_4).substring(0, ((n3.nivel_4).split("_")[0].length + 2)) === values2; //get value where region is same
+                        });
+
+                        $.each(items3, function(segment_4, segment_5) {
+                            camada_4 = `<p name="segment_4" id="segment_4">${segment_5.name}</p>`;
+                            camada_5 = `<p name="segment_5" id="segment_5">${segment_5.name1}</p>`;
+                            camada_6 = `<p name="segment_6" id="segment_6">${segment_5.name2}</p>`;
+                        });
+
+                        // Make the select elements invisible because they have no value in this case
+                        document.getElementById("select_3").style.display = "None";
+
+                        // The main div with texts is visible in this case
+                        document.getElementById("divMae").style.display = "Block";
+
+                    } else {
+                        camada_4 = `<p name="segment_4" id="segment_4"></p>`;
+                        camada_5 = `<p name="segment_5" id="segment_5"></p>`;
+                        camada_6 = `<p name="segment_6" id="segment_6"></p>`;
+
+                        // The main div with texts is invisible in this case
+                        document.getElementById("divMae").style.display = "None";
+
+                        // Make the select elements visible because they have value in this case
+                        document.getElementById("select_3").style.display = "Block";
+                    };
+                });
+                $('#segment_3').html(camada_3);
+                $('#segment_4').html(camada_4);
+                $('#segment_5').html(camada_5);
+                $('#segment_6').html(camada_6);
+            });
+
+            $('#segment_3').change(function() {
+                document.getElementById("p_example").style.display = "Block";
+
+                var values3 = $(this).val()
+                var camada_4 = ""
+                /*$.getJSON('provinces.json', function(json2) {*/
+                //filter your json return..
+                var items3 = $(json_text)
+                    .filter(function(i3, n3) {
+                    return n3.nivel_3 === values3; //get value where region is same
+                });
+
+                //Loop through dates
+                $.each(items3, function(segment_4, segment_5) {
+                    camada_4 = `<p name="segment_4" id="segment_4">${segment_5.name}</p>`;
+                    camada_5 = `<p name="segment_5" id="segment_5">${segment_5.name1}</p>`;
+                    camada_6 = `<p name="segment_6" id="segment_6">${segment_5.name2}</p>`;
+                     
+                    // If it doesn't have an example, don't need to show the element
+                    if (segment_5.name2 == "") {
+                        document.getElementById("p_example").style.display = "None";
+                    };
+                });
+
+                // The main div with texts is visible in this case
+                document.getElementById("divMae").style.display = "Block";
+
+                $('#segment_4').html(camada_4);
+                $('#segment_5').html(camada_5);
+                $('#segment_6').html(camada_6);
+            });
+        });
+
+    </script>
+
+</head>
+
+
+<body>
+    <div id="logo"></div>
+   
+    <div class="container form-group" style="width: 100%; margin-top: 3vw; display: flex; position: relative; z-index: 1;">
+        <div id="select_1" class="form-group" style="width: 33.33%">
+            <select name="segment_1" id="segment_1" class="form-control input-sm" style="display: block; margin: 0 auto; width:300px" required>
+                <option value="" disabled selected value>Key Words</option>
+            </select>
+        </div>
+
+        <div id="select_2" class="form-group" style="width: 33.33%">
+            <select name="segment_2" id="segment_2" class="form-control input-sm" style="display: block; margin: 0 auto; width:200px" required>
+                <option value="" disabled selected value>Segment 2</option>
+            </select>
+        </div>
+
+        <div id="select_3" class="form-group" style="width: 33.33%">
+            <select name="segment_3" id="segment_3" class="form-control input-sm" style="display: block; margin: 0 auto; width:200px" required>
+                <option value="" disabled selected value>Segment 3</option>
+            </select>
+        </div>
+    </div>
+    
+    <div id="divMae" class="container form-group" style="margin: 2vw .5vw; display: none; z-index: -2;">
+
+        <div style="background-color: white; border-style: double;">
+            <div style="padding: 1vw">
+                <!-- Texts with the information according to decision tree -->
+                <div class="form-group">
+                    <p name="segment_4" id="segment_4" style="font-size: 1.2em; font-weight: bold; color: darkblue;"></p>
+                    <p name="segment_5" id="segment_5" style="font-size: 1.1em"></p>
+                </div>
+                
+                <br>
+
+                <div class="form-group">
+                    <p id="p_example" style="font-size: 1.2em; font-weight: bold; display: block">Example</p>
+                    <p name="segment_6" id="segment_6" style="font-size: 1.1em"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+</body>
