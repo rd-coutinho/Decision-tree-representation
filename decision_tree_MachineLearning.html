@@ -11,7 +11,7 @@
          
         }
 
-        #logo {
+        #background {
             background-image: url("background.jpg");
             /* background-attachment: fixed; */
             background-repeat: no-repeat;
@@ -205,8 +205,8 @@
 
                 var values = $(this).val()
                 var camada_2 = ""
-                /*$.getJSON('provinces.json', function(json2) {*/
-                //filter your json return..
+                /*$.getJSON('data.json', function(json2) {*/
+                //filter the json return..
                 var items = $(json2)
                     .filter(function(i, n) {
                     return n.nivel_1 === values; //get value where region is same
@@ -235,8 +235,8 @@
 
                 var values2 = $(this).val()
                 var camada_3 = ""
-                /*$.getJSON('provinces.json', function(json2) {*/
-                //filter your json return..
+                /*$.getJSON('data.json', function(json2) {*/
+                //filter the json return..
                 var items2 = $(json3)
                     .filter(function(i2, n2) {
                     return n2.nivel_2 === values2; //get value where region is same
@@ -293,8 +293,8 @@
 
                 var values3 = $(this).val()
                 var camada_4 = ""
-                /*$.getJSON('provinces.json', function(json2) {*/
-                //filter your json return..
+                /*$.getJSON('data.json', function(json2) {*/
+                //filter the json return..
                 var items3 = $(json_text)
                     .filter(function(i3, n3) {
                     return n3.nivel_3 === values3; //get value where region is same
@@ -327,7 +327,7 @@
 
 
 <body>
-    <div id="logo"></div>
+    <div id="background"></div>
    
     <div class="container form-group" style="width: 100%; margin-top: 3vw; display: flex; position: relative; z-index: 1;">
         <div id="select_1" class="form-group" style="width: 33.33%">
