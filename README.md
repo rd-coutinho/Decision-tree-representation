@@ -6,3 +6,5 @@ The system outputs a text and examples belonging to each branch of the tree, for
 
 ## Data science roadmap
 ![alt text](https://github.com/rd-coutinho/Decision-tree-representation/blob/main/Data-Science-Roadmap.png)
+
+![](Decision_tree_HTML_page.gif)
